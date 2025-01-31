@@ -14,7 +14,7 @@ function updateStatus(message, isError = false) {
 }
 
 function clearOutput() {
-    document.getElementById('output').textContent = 'Data akan muncul di sini...';
+    document.getElementById('output').textContent = 'Data will appear here...';
     document.getElementById('output').style.color = '#00ff00';
     updateStatus('Cleared');
 }
@@ -26,14 +26,14 @@ async function fetchFirebaseData() {
     const url = document.getElementById('firebaseUrl').value.trim();
     
     if (!url) {
-        output.textContent = '⚠️ Silakan masukkan URL Firebase terlebih dahulu!';
+        output.textContent = '⚠️ Please enter a Firebase URL first!';
         output.style.color = '#ff4444';
-        updateStatus('Error: URL kosong', true);
+        updateStatus('Error: URL is empty', true);
         return;
     }
 
     if (!url.startsWith('https://')) {
-        output.textContent = '⚠️ URL harus dimulai dengan https://';
+        output.textContent = '⚠️ URL must start with https://';
         output.style.color = '#ff4444';
         updateStatus('Error: Invalid URL', true);
         return;
@@ -41,9 +41,9 @@ async function fetchFirebaseData() {
 
     loading.style.display = 'block';
     fetchBtn.disabled = true;
-    output.textContent = 'Menghubungkan ke Firebase...';
+    output.textContent = 'Connecting to Firebase...';
     output.style.color = '#00ff00';
-    updateStatus('Mengambil data...');
+    updateStatus('Fetching data...');
 
     try {
         const response = await fetch(url + '/.json');
@@ -57,7 +57,7 @@ async function fetchFirebaseData() {
         output.style.color = '#00ff00';
         lastFetchTime = new Date();
         updateTimestamp();
-        updateStatus('Data berhasil diambil');
+        updateStatus('Data fetched successfully');
     } catch (error) {
         output.textContent = '❌ Error: ' + error.message;
         output.style.color = '#ff4444';
@@ -80,15 +80,15 @@ document.getElementById('output').addEventListener('click', async function() {
     const text = this.textContent;
     try {
         await navigator.clipboard.writeText(text);
-        updateStatus('Teks disalin ke clipboard!');
-        setTimeout(() => updateStatus('Siap'), 2000);
+        updateStatus('Text copied to clipboard!');
+        setTimeout(() => updateStatus('Ready'), 2000);
     } catch (err) {
-        updateStatus('Gagal menyalin teks', true);
+        updateStatus('Failed to copy text', true);
     }
 });
 
 // Initial status
-updateStatus('Siap');
+updateStatus('Ready');
 
 function updateStatus(message, isError = false, isBreaking = false) {
     const status = document.getElementById('status');
@@ -104,14 +104,14 @@ async function fetchFirebaseData() {
     const url = document.getElementById('firebaseUrl').value.trim();
     
     if (!url) {
-        output.textContent = '⚠️ Masukkan URL Firebase yang valid!';
+        output.textContent = '⚠️ Please enter a valid Firebase URL!';
         output.style.color = '#ff4444';
-        updateStatus('Error: URL kosong', true);
+        updateStatus('Error: URL is empty', true);
         return;
     }
 
     if (!url.startsWith('https://')) {
-        output.textContent = '⚠️ URL harus dimulai dengan https://';
+        output.textContent = '⚠️ URL must start with https://';
         output.style.color = '#ff4444';
         updateStatus('Error: Invalid URL', true);
         return;

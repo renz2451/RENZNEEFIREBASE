@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bidzz Official Firebase Breaker - Advanced Firebase Data Extraction Tool">
+    <meta name="author" content="Bidzz Official ">
+    <meta name="theme-color" content="#ff3e3e">
+    <title>Bidzz Official  - Firebase Breaker Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particles" id="particles-js"></div>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-shield-alt cyber-icon"></i>
+                    <span class="logo-text">Bidzz Official <span class="flag"></span></span>
+                </div>
+                <div class="cyber-line"></div>
+            </div>
+            <h2 class="title">Firebase Breaker <span class="pro-badge">PRO</span></h2>
+            <div class="subtitle">Advanced Database Exploitation Tool</div>
+        </header>
+        
+        <main class="main-content">
+            <div class="control-panel">
+                <div class="input-group">
+                    <div class="input-label">Target Database URL</div>
+                    <div class="input-wrapper">
+                        <input type="text" id="firebaseUrl" 
+                               placeholder="https://your-project.firebaseio.com/path" 
+                               autocomplete="off"
+                               spellcheck="false">
+                        <i class="fas fa-link"></i>
+                        <div class="input-focus-effect"></div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button onclick="fetchFirebaseData()" id="fetchBtn" class="primary-btn cyberpunk-btn">
+                        <span class="btn-glitch"></span>
+                        <i class="fas fa-bolt"></i>
+                        <span>INITIATE BREAK</span>
+                    </button>
+                    <button onclick="clearOutput()" class="clear-btn cyberpunk-btn">
+                        <span class="btn-glitch"></span>
+                        <i class="fas fa-eraser"></i>
+                        <span>CLEAR LOGS</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-title">
+                        <i class="fas fa-terminal"></i>
+                        Operation Console
+                    </div>
+                    <div class="terminal-controls">
+                        <span class="terminal-btn minimize"></span>
+                        <span class="terminal-btn maximize"></span>
+                        <span class="terminal-btn close"></span>
+                    </div>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="loader-ring"></div>
+                    <span>EXECUTING BREAK SEQUENCE...</span>
+                </div>
+
+                <div id="output" class="terminal-output" title="Click to copy">
+                    <div class="line-numbers"></div>
+                    <div class="output-content">System ready. Awaiting target input...</div>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <div class="status-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="timestamp" class="timestamp">No recent operations</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-signal"></i>
+                    <span id="status" class="status">System Status: READY</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="security-level">Security Level: Maximum</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>© 2025 Bidzz Official 🇮🇩</p>
+                    <div class="version-badge">v2.0.0 PRO</div>
+                </div>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-database"></i>
+                        <span id="total-breaks">Total Breaks: 0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-bolt"></i>
+                        <span id="success-rate">Success Rate: 100%</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
